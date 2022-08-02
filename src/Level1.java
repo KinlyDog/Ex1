@@ -13,7 +13,11 @@ public class Level1 {
                 strTmp[i] = strTmp[i].substring(len);
             }
 
-            str += strTmp[i] + " ";
+            str += strTmp[i];
+
+            if (i < strTmp.length - 1) {
+                str += " ";
+            }
         }
 
         String[] mas = new String[str.length() / len + 1];
