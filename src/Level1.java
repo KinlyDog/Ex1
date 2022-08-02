@@ -1,7 +1,18 @@
 public class Level1 {
     public static int[] WordSearch(int len, String s, String subs) {
+        String[] strTmp = s.split(" ");
+        String str = "";
+
+        for (int i = 0; i < strTmp.length; i++) {
+            while (strTmp[i].length() > len) {
+                str += strTmp[i].substring(0, len) + " ";
+                strTmp[i] = strTmp[i].substring(len);
+            }
+
+            str += strTmp[i] + " ";
+        }
+
         String[] mas = new String[s.length() / len + 1];
-        String str = s;
 
         int t = 0;
         while (str.length() != 0) {
@@ -35,4 +46,10 @@ public class Level1 {
         return ma;
     }
 
+    public static void main(String[] args) {
+        int len = 12;
+        String s = "1234567891123 1) строка разбивается на набор строк через выравнивание по заданной ширине.";
+        String subs = "строк";
+        WordSearch(len, s, subs);
+    }
 }
