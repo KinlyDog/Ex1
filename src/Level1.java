@@ -29,17 +29,19 @@ public class Level1 {
             int ind = str.lastIndexOf(' ', len - 1);
             int sLen = str.length();
 
-            if (ind != -1) {
-                mas[t] = str.substring(0, ind);
-                str = str.substring(ind + 1);
-
-            } else if (sLen > len) {
-                mas[t] = str.substring(0, len);
-                str = str.substring(len + 1); // correct
-
-            } else {
+            if (sLen <= len) {
                 mas[t] = str.substring(0, sLen);
                 str = str.substring(sLen);
+            }
+
+            else if (str.charAt(len) == ' ') {
+                mas[t] = str.substring(0, len);
+                str = str.substring(len + 1);
+            }
+
+            else if (ind != -1) {
+                mas[t] = str.substring(0, ind);
+                str = str.substring(ind + 1);
             }
 
             t++;
