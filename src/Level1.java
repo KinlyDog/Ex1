@@ -4,6 +4,10 @@ public class Level1 {
         String str = "";
 
         for (int i = 0; i < strTmp.length; i++) {
+            while (strTmp[i].equals("")) {
+                i++;
+            }
+
             while (strTmp[i].length() > len) {
                 str += strTmp[i].substring(0, len) + " ";
                 strTmp[i] = strTmp[i].substring(len);
@@ -48,7 +52,7 @@ public class Level1 {
 
     public static void main(String[] args) {
         int len = 12;
-        String s = "1234567891123 1) строка разбивается на набор строк через выравнивание по заданной ширине. еще теккста добавиммммммм для проверкеиии";
+        String s = "   1234567891123 1) строка разбивается на набор строк через выравнивание по заданной ширине. еще теккста добавиммммммм для проверкеиии";
         String subs = "строк";
         WordSearch(len, s, subs);
     }
