@@ -1,24 +1,25 @@
 public class Level1 {
     public static int[] WordSearch(int len, String s, String subs) {
-        String[] strTmp = s.split(" ");
-        String str = "";
+        String[] strSplit = s.split(" ");
+        StringBuilder bld = new StringBuilder();
 
-        for (int i = 0; i < strTmp.length; i++) {
-            while (strTmp[i].equals("")) {
+        for (int i = 0; i < strSplit.length; i++) {
+            while (strSplit[i].equals("")) {
                 i++;
             }
 
-            while (strTmp[i].length() > len) {
-                str += strTmp[i].substring(0, len) + " ";
-                strTmp[i] = strTmp[i].substring(len);
+            while (strSplit[i].length() > len) {
+                bld.append(strSplit[i].substring(0, len) + " ");
+                strSplit[i] = strSplit[i].substring(len);
             }
 
-            str += strTmp[i];
+            bld.append(strSplit[i]);
 
-            if (i < strTmp.length - 1) {
-                str += " ";
+            if (i < strSplit.length - 1) {
+                bld.append(" ");
             }
         }
+        String str = bld.toString();
 
         String[] mas = new String[str.length() / len + 1];
 
