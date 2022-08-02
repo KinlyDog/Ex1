@@ -44,7 +44,7 @@ public class Level1 {
             t++;
         }
 
-        int[] ma = new int[t - 1];
+        int[] ma = new int[t];
         for (int i = 0; i < ma.length; i++) {
             if (mas[i].matches("(?s).*\\b" + subs + "\\b.*")) {
                 ma[i] = 1;
@@ -55,6 +55,5 @@ public class Level1 {
 
         return ma;
     }
-
 
 }
