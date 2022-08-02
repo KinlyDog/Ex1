@@ -32,9 +32,9 @@ public class Level1 {
                 mas[t] = str.substring(0, ind);
                 str = str.substring(ind + 1);
 
-            } else if (sLen >= len) {
+            } else if (sLen > len) {
                 mas[t] = str.substring(0, len);
-                str = str.substring(len + 1);
+                str = str.substring(len + 1); // correct
 
             } else {
                 mas[t] = str.substring(0, sLen);
@@ -57,7 +57,7 @@ public class Level1 {
 
     public static void main(String[] args) {
         int len = 12;
-        String s = "   1234567891123 1) строка разбивается на набор строк через выравнивание по заданной ширине. еще теккста добавиммммммм для проверкеиии";
+        String s = "   123456789012 12345 123456123456789112 123456789012";
         String subs = "строк";
         WordSearch(len, s, subs);
     }
