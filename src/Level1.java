@@ -21,7 +21,7 @@ public class Level1 {
         }
         String str = bld.toString();
 
-        String[] mas = new String[str.length() / len + 1];
+        String[] mas = new String[str.length() / (len / 2)];
 
         int t = 0;
         while (str.length() != 0) {
@@ -44,15 +44,17 @@ public class Level1 {
             t++;
         }
 
-        int[] ma = new int[mas.length];
+        int[] ma = new int[t - 1];
         for (int i = 0; i < ma.length; i++) {
             if (mas[i].matches("(?s).*\\b" + subs + "\\b.*")) {
                 ma[i] = 1;
-            } else
+            } else {
                 ma[i] = 0;
+            }
         }
 
         return ma;
     }
+
 
 }
