@@ -21,7 +21,8 @@ public class Level1 {
         }
         String str = bld.toString();
 
-        String[] mas = new String[str.length() / (len / 2)];
+        int masLen = str.length() / (len / 2) + 1;
+        String[] mas = new String[masLen]; // ?
 
         int t = 0;
         while (str.length() != 0) {
