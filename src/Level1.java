@@ -55,10 +55,4 @@ public class Level1 {
         return ma;
     }
 
-    public static void main(String[] args) {
-        int len = 12;
-        String s = "   123456789012 12345 123456123456789112 123456789012";
-        String subs = "строк";
-        WordSearch(len, s, subs);
-    }
 }
