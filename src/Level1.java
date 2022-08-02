@@ -35,10 +35,4 @@ public class Level1 {
         return ma;
     }
 
-    public static void main(String[] args) {
-        int len = 12;
-        String s = "1) строка разбивается на набор строк через выравнивание по заданной ширине.";
-        String subs = "строк";
-        WordSearch(len, s, subs);
-    }
 }
