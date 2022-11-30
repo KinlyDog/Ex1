@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="379f2c4c-4d1a-426b-a2f7-ff4b7853d95b" name="Changes" comment="Project editing">
+    <list default="true" id="379f2c4c-4d1a-426b-a2f7-ff4b7853d95b" name="Changes" comment="Complete project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "last_opened_file_path": "/Volumes/Samsung/Java/Course 3/3. Survior/ex1",
     "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
@@ -149,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659424285812</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Complete project">
+      <created>1659429647114</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659429647114</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,15 +174,16 @@
     <MESSAGE value="Create project" />
     <MESSAGE value="Reda project" />
     <MESSAGE value="Project editing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project editing" />
+    <MESSAGE value="Complete project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Level1.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="92" />
+          <line>58</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

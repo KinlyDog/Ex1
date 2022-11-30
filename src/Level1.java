@@ -24,30 +24,30 @@ public class Level1 {
         int masLen = str.length() / (len / 2) + 1;
         String[] mas = new String[masLen]; // ?
 
-        int t = 0;
+        int stringNumber = 0;
         while (str.length() != 0) {
             int ind = str.lastIndexOf(' ', len - 1);
             int sLen = str.length();
 
             if (sLen <= len) {
-                mas[t] = str.substring(0, sLen);
+                mas[stringNumber] = str.substring(0, sLen);
                 str = str.substring(sLen);
             }
 
             else if (str.charAt(len) == ' ') {
-                mas[t] = str.substring(0, len);
+                mas[stringNumber] = str.substring(0, len);
                 str = str.substring(len + 1);
             }
 
             else if (ind != -1) {
-                mas[t] = str.substring(0, ind);
+                mas[stringNumber] = str.substring(0, ind);
                 str = str.substring(ind + 1);
             }
 
-            t++;
+            stringNumber++;
         }
 
-        int[] ma = new int[t];
+        int[] ma = new int[stringNumber];
         for (int i = 0; i < ma.length; i++) {
             if (mas[i].matches("(?s).*\\b" + subs + "\\b.*")) {
                 ma[i] = 1;
