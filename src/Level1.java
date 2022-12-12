@@ -1,9 +1,11 @@
 public class Level1 {
     public static int[] WordSearch(int len, String s, String subs) {
         String[] wordsFromString = s.split(" ");
+        final int WORD_COUNT = wordsFromString.length;
+
         StringBuilder bld = new StringBuilder();
 
-        for (int i = 0; i < wordsFromString.length; i++) {
+        for (int i = 0; i < WORD_COUNT; i++) {
             while (wordsFromString[i].equals("")) {
                 i++;
             }
@@ -15,15 +17,15 @@ public class Level1 {
 
             bld.append(wordsFromString[i]);
 
-            if (i < wordsFromString.length - 1) {
+            if (i < WORD_COUNT - 1) {
                 bld.append(" ");
             }
         }
 
         String str = bld.toString();
 
-        int masLen = str.length() / (len / 2) + 1;
-        String[] limitedRows = new String[masLen]; // ?
+        final int LIMITED_ROWS_LENGTH = str.length() / (len / 2) + 1;
+        String[] limitedRows = new String[LIMITED_ROWS_LENGTH]; // ?
 
         int stringNumber = 0;
         while (str.length() != 0) {
