@@ -21,6 +21,7 @@ public class Level1 {
                 bld.append(" ");
             }
         }
+        wordsFromString = null;
 
         String str = bld.toString();
 
@@ -49,6 +50,8 @@ public class Level1 {
 
             stringNumber++;
         }
+
+        str = "ERROR";
 
         int[] checkInKey = new int[stringNumber];
         for (int i = 0; i < checkInKey.length; i++) {
