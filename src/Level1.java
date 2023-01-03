@@ -3,56 +3,58 @@ public class Level1 {
         String[] wordsFromString = s.split(" ");
         final int WORD_COUNT = wordsFromString.length;
 
-        StringBuilder bld = new StringBuilder();
-
+        // производим разбивку строк по заданной ширине
+        // если строка больше заданной ширины, разделяем строку пробелами
+        StringBuilder tempString = new StringBuilder();
         for (int i = 0; i < WORD_COUNT; i++) {
             while (wordsFromString[i].equals("")) {
                 i++;
             }
 
             while (wordsFromString[i].length() > len) {
-                bld.append(wordsFromString[i].substring(0, len) + " ");
+                tempString.append(wordsFromString[i], 0, len).append(" ");
                 wordsFromString[i] = wordsFromString[i].substring(len);
             }
 
-            bld.append(wordsFromString[i]);
+            tempString.append(wordsFromString[i]);
 
             if (i < WORD_COUNT - 1) {
-                bld.append(" ");
+                tempString.append(" ");
             }
         }
-        wordsFromString = null;
 
-        String str = bld.toString();
+        // строка со словами не более заданной длины
+        String splitString = tempString.toString();
 
-        final int LIMITED_ROWS_LENGTH = str.length() / (len / 2) + 1;
-        String[] limitedRows = new String[LIMITED_ROWS_LENGTH]; // ?
+        final int LIMITED_ROWS_LENGTH = splitString.length() / (len / 2) + 1;
+        String[] limitedRows = new String[LIMITED_ROWS_LENGTH];
 
+        // получаем массив строк заданной длинны
         int stringNumber = 0;
-        while (str.length() != 0) {
-            int ind = str.lastIndexOf(' ', len - 1);
-            int sLen = str.length();
+        while (splitString.length() != 0) {
+            int ind = splitString.lastIndexOf(' ', len - 1);
+            int sLen = splitString.length();
 
             if (sLen <= len) {
-                limitedRows[stringNumber] = str.substring(0, sLen);
-                str = str.substring(sLen);
+                limitedRows[stringNumber] = splitString.substring(0, sLen);
+                splitString = splitString.substring(sLen);
             }
 
-            else if (str.charAt(len) == ' ') {
-                limitedRows[stringNumber] = str.substring(0, len);
-                str = str.substring(len + 1);
+            else if (splitString.charAt(len) == ' ') {
+                limitedRows[stringNumber] = splitString.substring(0, len);
+                splitString = splitString.substring(len + 1);
             }
 
             else if (ind != -1) {
-                limitedRows[stringNumber] = str.substring(0, ind);
-                str = str.substring(ind + 1);
+                limitedRows[stringNumber] = splitString.substring(0, ind);
+                splitString = splitString.substring(ind + 1);
             }
 
             stringNumber++;
         }
 
-        str = "ERROR";
-
+        // создаем массив-маску для проверки
+        // проверяем наличие искомого слова в строках
         int[] checkInKey = new int[stringNumber];
         for (int i = 0; i < checkInKey.length; i++) {
             if (limitedRows[i].matches("(?s).*\\b" + subs + "\\b.*")) {
